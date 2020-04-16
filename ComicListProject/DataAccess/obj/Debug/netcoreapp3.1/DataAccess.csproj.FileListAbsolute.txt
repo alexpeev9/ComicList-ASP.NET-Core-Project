@@ -1,0 +1,4 @@
+C:\Users\alexp\Desktop\ComicListProject\DataAccess\bin\Debug\netcoreapp3.1\DataStructure.dll
+C:\Users\alexp\Desktop\ComicListProject\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csprojAssemblyReference.cache
+C:\Users\alexp\Desktop\ComicListProject\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfoInputs.cache
+C:\Users\alexp\Desktop\ComicListProject\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfo.cs
