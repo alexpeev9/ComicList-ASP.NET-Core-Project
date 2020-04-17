@@ -61,7 +61,7 @@ namespace MyComicList.Models.ViewModels
             if (comic.Studios != null)
             {
                 StudiosIDs = new List<int>();
-                foreach (Studio  studio in comic.Studios)
+                foreach (Studio studio in comic.Studios)
                 {
                     StudiosIDs.Add(studio.ID);
                 }
@@ -70,7 +70,7 @@ namespace MyComicList.Models.ViewModels
             }
             if (comic.Genres != null)
             {
-                GenreIDs= new List<int>();
+                GenreIDs = new List<int>();
                 foreach (Genre genre in comic.Genres)
                 {
                     GenreIDs.Add(genre.ID);

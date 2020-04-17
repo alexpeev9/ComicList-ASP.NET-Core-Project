@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexp\\Desktop\\ComicListProject\\DataAccess\\DataAccess.csproj": {}
+    "C:\\Users\\alexp\\Desktop\\ComicListProject\\ComicList-ASP.NET-Core-Project\\ComicListProject\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexp\\Desktop\\ComicListProject\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\alexp\\Desktop\\ComicListProject\\ComicList-ASP.NET-Core-Project\\ComicListProject\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexp\\Desktop\\ComicListProject\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\alexp\\Desktop\\ComicListProject\\ComicList-ASP.NET-Core-Project\\ComicListProject\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\alexp\\Desktop\\ComicListProject\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\alexp\\Desktop\\ComicListProject\\ComicList-ASP.NET-Core-Project\\ComicListProject\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\alexp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexp\\Desktop\\ComicListProject\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\alexp\\Desktop\\ComicListProject\\ComicList-ASP.NET-Core-Project\\ComicListProject\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\alexp\\Desktop\\ComicListProject\\DataStructure\\DataStructure.csproj": {
-                "projectPath": "C:\\Users\\alexp\\Desktop\\ComicListProject\\DataStructure\\DataStructure.csproj"
+              "C:\\Users\\alexp\\Desktop\\ComicListProject\\ComicList-ASP.NET-Core-Project\\ComicListProject\\DataStructure\\DataStructure.csproj": {
+                "projectPath": "C:\\Users\\alexp\\Desktop\\ComicListProject\\ComicList-ASP.NET-Core-Project\\ComicListProject\\DataStructure\\DataStructure.csproj"
               }
             }
           }
@@ -78,14 +78,14 @@
         }
       }
     },
-    "C:\\Users\\alexp\\Desktop\\ComicListProject\\DataStructure\\DataStructure.csproj": {
+    "C:\\Users\\alexp\\Desktop\\ComicListProject\\ComicList-ASP.NET-Core-Project\\ComicListProject\\DataStructure\\DataStructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexp\\Desktop\\ComicListProject\\DataStructure\\DataStructure.csproj",
+        "projectUniqueName": "C:\\Users\\alexp\\Desktop\\ComicListProject\\ComicList-ASP.NET-Core-Project\\ComicListProject\\DataStructure\\DataStructure.csproj",
         "projectName": "DataStructure",
-        "projectPath": "C:\\Users\\alexp\\Desktop\\ComicListProject\\DataStructure\\DataStructure.csproj",
+        "projectPath": "C:\\Users\\alexp\\Desktop\\ComicListProject\\ComicList-ASP.NET-Core-Project\\ComicListProject\\DataStructure\\DataStructure.csproj",
         "packagesPath": "C:\\Users\\alexp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexp\\Desktop\\ComicListProject\\DataStructure\\obj\\",
+        "outputPath": "C:\\Users\\alexp\\Desktop\\ComicListProject\\ComicList-ASP.NET-Core-Project\\ComicListProject\\DataStructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexp\\AppData\\Roaming\\NuGet\\NuGet.Config",

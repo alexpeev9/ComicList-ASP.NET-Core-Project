@@ -25,7 +25,7 @@
             List<GenreViewModel> genreViewModels = new List<GenreViewModel>();
             foreach (Genre genre in genres)
             {
-               GenreViewModel genreViewModel = new GenreViewModel(genre);
+                GenreViewModel genreViewModel = new GenreViewModel(genre);
                 genreViewModels.Add(genreViewModel);
             }
             return genreViewModels;

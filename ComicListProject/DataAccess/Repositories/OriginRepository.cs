@@ -3,7 +3,7 @@
     using DataStructure;
     using System.Collections.Generic;
     using System.Linq;
-    class OriginRepository : GenericRepository<Origin>
+    public class OriginRepository : GenericRepository<Origin>
     {
         public OriginRepository() : base(new ComicDbContext())
         {

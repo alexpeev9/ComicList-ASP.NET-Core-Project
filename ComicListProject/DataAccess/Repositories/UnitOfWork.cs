@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataAccess.Repositories
 {
-    class UnitOfWork
+    public class UnitOfWork
     {
         private readonly ComicDbContext context;
 
@@ -82,6 +82,19 @@ namespace DataAccess.Repositories
         {
             this.context = new ComicDbContext();
         }
+        //private void Dispose(bool disposing)
+        //{
+        //    if (!disposing) return;
+        //    if (context == null) return;
+        //    context.Dispose();
+        //    context = null;
+        //}
+
+        //public void Dispose()
+        //{
+        //    Dispose(true);
+        //    GC.SuppressFinalize(this);
+        //}
 
     }
 }

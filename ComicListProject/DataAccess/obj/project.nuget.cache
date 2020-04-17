@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SuT4xjnRPFswRqQ9Tyra/2GFpptooceaJKWsy+3kf6mrGQYs/5Ao+kD7JATbBd9B7C7Z/Ig6Jly2a4OWNGtkTA==",
+  "dgSpecHash": "7lvq00JdKMSQakEK26Qce2KnFsdCnfgARDlL8ZZGimlqbd4nH3YRfMLQoc8CZITSXVhdt2KBdNdeFIXtRd8h2Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexp\\Desktop\\ComicListProject\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\alexp\\Desktop\\ComicListProject\\ComicList-ASP.NET-Core-Project\\ComicListProject\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexp\\.nuget\\packages\\entityframework\\6.4.0\\entityframework.6.4.0.nupkg.sha512",
     "C:\\Users\\alexp\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

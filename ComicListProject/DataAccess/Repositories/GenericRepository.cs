@@ -24,7 +24,7 @@
             return entities.ToList();
         }
 
-        public void CreateOrUpdate(T entity)
+        public virtual void CreateOrUpdate(T entity)
         {
             DateTime currentDateTime = DateTime.Now;
 
@@ -34,6 +34,10 @@
             {
                 // Set value only before first commit
                 entity.CreatedAt = currentDateTime;
+            }
+            else
+            {
+                entity.CreatedAt = GetByID(entity.ID).CreatedAt;
             }
             // Set value for each commit
             entity.UpdatedAt = currentDateTime;

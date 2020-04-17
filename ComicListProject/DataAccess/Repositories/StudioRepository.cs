@@ -3,7 +3,7 @@
     using DataStructure;
     using System.Collections.Generic;
     using System.Linq;
-    class StudioRepository : GenericRepository<Studio>
+    public class StudioRepository : GenericRepository<Studio>
     {
         public StudioRepository() : base(new ComicDbContext())
         {
@@ -16,5 +16,19 @@
         {
             return this.GetByID(id).Comics.ToList();
         }
+        public List<Studio> SearchBy(string queryString)
+        {
+            return context.Studios.Where(actor => actor.Name.Contains(queryString)).ToList();
+        }
+        public List<Studio> GetByIDs(List<int> IDs)
+        {
+            List<Studio> studios = new List<Studio>();
+            foreach (int ID in IDs)
+            {
+                studios.Add(GetByID(ID));
+            }
+            return studios;
+        }
     }
 }
+

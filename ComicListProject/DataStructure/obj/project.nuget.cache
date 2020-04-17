@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mHrcXv01eCEFq1F8dQfVeE8ueJ/PXBeqg17V9o5iXvJkXdhRCa12SbUdroBcii/8cJvHWLX+GmuBzbDYJYkTKA==",
+  "dgSpecHash": "OcGgdFj6RV+IvIzCsIP4t0M5MJO4O1DvtI3Xz81nakPN8TWae/R6Za49HXdqqNgM8mZOS0mmUSas2pt2LYf+PA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexp\\Desktop\\ComicListProject\\DataStructure\\DataStructure.csproj",
+  "projectFilePath": "C:\\Users\\alexp\\Desktop\\ComicListProject\\ComicList-ASP.NET-Core-Project\\ComicListProject\\DataStructure\\DataStructure.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
