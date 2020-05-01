@@ -2,12 +2,16 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public class Origin : Model
+    public class Origin
     {
+        [Required]
+        public int OriginID { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
         public string FlagUrl { get; set; }
-        public ICollection<Comic> Comics { get; set; }
+        [Required]
+        public string Description { get; set; }
+        public List<Comic> Comics { get; set; }
     }
 }

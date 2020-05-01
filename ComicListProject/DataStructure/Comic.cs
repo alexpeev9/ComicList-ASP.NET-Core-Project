@@ -2,10 +2,14 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public class Comic : Model
+    public class Comic
     {
         [Required]
+        public int ComicId { get; set; }
+        [Required]
         public string Title { get; set; }
+        [Required]
+        public decimal Price { get; set; }
         [Required]
         public string Info { get; set; }
         [Required]
@@ -17,10 +21,9 @@
         [Required]
         public bool IsPopularComic { get; set; }
         [Required]
-        public bool IsCompletedComic { get; set; }
+        public bool InStock { get; set; }
 
-        public Origin Origin { get; set; } // 1 to 1 Relationships
-        public virtual ICollection<Genre> Genres { get; set; } // One-to-Many Relationships
-        public virtual ICollection<Studio> Studios { get; set; } // Many-to-Many Relationships
+        public int OriginID { get; set; }
+        public virtual Origin Origin { get; set; }
     }
 }
