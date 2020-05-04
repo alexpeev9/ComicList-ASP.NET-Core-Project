@@ -1,0 +1,26 @@
+﻿@model Comic
+
+<div class="container marginTop">
+    <div class="row">
+        <div class="card">
+            <div class="text-center view overlay hm-white-slight">
+                <img src="@Model.ImageUrl" class="img-fluid" alt="">
+                <a href="#">
+                    <div class="mask waves-effect waves-light"></div>
+                </a>
+            </div>
+            <div class="card-block">
+                <!--Title-->
+                <h4 class="card-title">@Model.Title</h4>
+                <!--Text-->
+                @*<p class="card-text">@Model.ImageUrl.</p>*@
+                <p class="btn btn-group pull-right">
+                    <a asp-controller="Comic" asp-action="List" class="btn btn-default">Show all comics</a>
+                    <button class="btn btn-success" id="cartButton" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-drinkId="@Model.ComicId">
+                        Add @Model.Title to cart
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

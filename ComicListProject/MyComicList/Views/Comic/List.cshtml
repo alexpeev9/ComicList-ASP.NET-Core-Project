@@ -1,0 +1,8 @@
+﻿@model ComicListViewModel
+
+<div class="row marginTop">
+    @foreach (var comic in Model.Comics)
+    {
+        @Html.Partial("ComicsSummary", comic)
+    }
+</div>

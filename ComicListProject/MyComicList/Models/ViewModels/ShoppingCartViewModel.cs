@@ -1,4 +1,5 @@
-﻿using DataStructure;
+﻿using DataAccess.Repositories;
+using DataStructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace MyComicList.Models.ViewModels
 {
     public class ShoppingCartViewModel
     {
-        public ShoppingCart ShoppingCart { get; set; }
+        public ShoppingRepository ShoppingRepository { get; set; }
         public decimal ShoppingCartTotal { get; set; }
     }
 }

@@ -64,82 +64,6 @@ namespace MyComicList.Data.Migrations
                     b.ToTable("Comics");
                 });
 
-            modelBuilder.Entity("DataStructure.Order", b =>
-                {
-                    b.Property<int>("OrderId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AddressLine1")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<DateTime>("OrderPlaced")
-                        .HasColumnType("datetime2");
-
-                    b.Property<decimal>("OrderTotal")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(25)")
-                        .HasMaxLength(25);
-
-                    b.HasKey("OrderId");
-
-                    b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("DataStructure.OrderDetail", b =>
-                {
-                    b.Property<int>("OrderDetailId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ComicId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("OrderDetailId");
-
-                    b.HasIndex("ComicId");
-
-                    b.HasIndex("OrderId");
-
-                    b.ToTable("OrderDetails");
-                });
-
             modelBuilder.Entity("DataStructure.Origin", b =>
                 {
                     b.Property<int>("OriginID")
@@ -180,11 +104,26 @@ namespace MyComicList.Data.Migrations
                     b.Property<string>("ShoppingCartId")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ShoppingRepositoryShoppingCartId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("ShoppingCartItemId");
 
                     b.HasIndex("ComicId");
 
+                    b.HasIndex("ShoppingRepositoryShoppingCartId");
+
                     b.ToTable("ShoppingCartItems");
+                });
+
+            modelBuilder.Entity("DataStructure.ShoppingRepository", b =>
+                {
+                    b.Property<string>("ShoppingCartId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("ShoppingCartId");
+
+                    b.ToTable("ShoppingCarts");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -396,26 +335,15 @@ namespace MyComicList.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DataStructure.OrderDetail", b =>
-                {
-                    b.HasOne("DataStructure.Comic", "Comic")
-                        .WithMany()
-                        .HasForeignKey("ComicId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DataStructure.Order", "Order")
-                        .WithMany("OrderLines")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("DataStructure.ShoppingCartItem", b =>
                 {
                     b.HasOne("DataStructure.Comic", "Comic")
                         .WithMany()
                         .HasForeignKey("ComicId");
+
+                    b.HasOne("DataStructure.ShoppingRepository", null)
+                        .WithMany("ShoppingCartItems")
+                        .HasForeignKey("ShoppingRepositoryShoppingCartId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

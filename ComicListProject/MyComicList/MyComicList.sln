@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyComicList", "MyComicList.csproj", "{09D3A51F-38B7-4283-8C2B-3579546D6A36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyComicList", "MyComicList.csproj", "{09D3A51F-38B7-4283-8C2B-3579546D6A36}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure", "..\DataStructure\DataStructure.csproj", "{E1614F1E-9CB8-4FCC-B65B-B50F83816849}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "..\DataAccess\DataAccess.csproj", "{2C7B7CF2-97AD-4DA4-A4C6-A1877EEE4F00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "..\DataAccess\DataAccess.csproj", "{2C7B7CF2-97AD-4DA4-A4C6-A1877EEE4F00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

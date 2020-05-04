@@ -12,9 +12,9 @@ namespace MyComicList.Controllers
     public class ShoppingCartController : Controller
     {
         private readonly IComicRepository _comicRepository;
-        private readonly ShoppingCartRepository _shoppingCartRepository;
+        private readonly ShoppingRepository _shoppingCartRepository;
 
-        public ShoppingCartController(IComicRepository comicRepository, ShoppingCartRepository shoppingCartRepository)
+        public ShoppingCartController(IComicRepository comicRepository, ShoppingRepository shoppingCartRepository)
         {
             _comicRepository = comicRepository;
             _shoppingCartRepository = shoppingCartRepository;
@@ -28,7 +28,7 @@ namespace MyComicList.Controllers
 
             var shoppingCartViewModel = new ShoppingCartViewModel
             {
-                ShoppingCart = _shoppingCartRepository,
+                ShoppingRepository = _shoppingCartRepository,
                 ShoppingCartTotal = _shoppingCartRepository.GetShoppingCartTotal()
             };
             return View(shoppingCartViewModel);

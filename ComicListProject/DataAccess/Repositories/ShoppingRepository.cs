@@ -1,25 +1,29 @@
-﻿using DataAccess.Interfaces;
-using DataStructure;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MyComicList.Data;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
+using System.Threading.Tasks;
 
-namespace DataAccess.Repositories
+namespace DataStructure
 {
-    public class ShoppingCartRepository : ShoppingCart
+    public class ShoppingRepository
     {
 
         private readonly ApplicationDbContext _appDbContext;
-        private ShoppingCartRepository(ApplicationDbContext appDbContext)
+        private ShoppingRepository(ApplicationDbContext appDbContext)
         {
             _appDbContext = appDbContext;
         }
-        public static ShoppingCart GetCart(IServiceProvider services)
+        [Key]
+        public string ShoppingCartId { get; set; }
+
+        public List<ShoppingCartItem> ShoppingCartItems { get; set; }
+
+        public static ShoppingRepository GetCart(IServiceProvider services)
         {
             ISession session = services.GetRequiredService<IHttpContextAccessor>()?
                 .HttpContext.Session;
@@ -29,11 +33,12 @@ namespace DataAccess.Repositories
 
             session.SetString("CartId", cartId);
 
-            return new ShoppingCartRepository(context) { ShoppingCartId = cartId };
+            return new ShoppingRepository(context) { ShoppingCartId = cartId };
         }
 
         public void AddToCart(Comic comic, int amount)
         {
+            amount = 0;
             var shoppingCartItem =
                     _appDbContext.ShoppingCartItems.SingleOrDefault(
                         s => s.Comic.ComicId == comic.ComicId && s.ShoppingCartId == ShoppingCartId);
@@ -108,5 +113,6 @@ namespace DataAccess.Repositories
                 .Select(c => c.Comic.Price * c.Amount).Sum();
             return total;
         }
+
     }
 }
