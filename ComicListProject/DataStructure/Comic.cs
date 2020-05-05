@@ -11,9 +11,6 @@
         [Required]
         public string Title { get; set; }
         [Required]
-        [Column(TypeName = "decimal(18,2)")]
-        public decimal Price { get; set; }
-        [Required]
         public string Info { get; set; }
         [Required]
         public byte Volumes { get; set; }

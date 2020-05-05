@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    public class ShoppingCartItem
+    public class FavoriteListItem
     {
-        public int ShoppingCartItemId { get; set; }
+        public int FavoriteListItemId { get; set; }
         public Comic Comic { get; set; }
         public int Amount { get; set; }
-        public string ShoppingCartId { get; set; }
+        public string FavoriteListId { get; set; }
     }
 }

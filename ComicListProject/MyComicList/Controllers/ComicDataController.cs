@@ -40,7 +40,6 @@ namespace MyComicList.Controllers
         {
             ComicId = dbComic.ComicId,
             Name = dbComic.Title,
-            Price = dbComic.Price,
             ImageUrl = dbComic.ImageUrl
         };
 

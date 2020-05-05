@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MyComicList.Models.ViewModels
 {
-    public class ShoppingCartViewModel
+    public class FavoriteListViewModel
     {
-        public ShoppingRepository ShoppingRepository { get; set; }
-        public decimal ShoppingCartTotal { get; set; }
+        public FavoriteService FavoriteService { get; set; }
+        //public decimal ShoppingCartTotal { get; set; }
     }
 }

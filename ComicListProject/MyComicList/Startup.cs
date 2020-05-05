@@ -64,7 +64,7 @@ namespace MyComicList
             services.AddTransient<IOriginRepository, OriginRepository>();
             services.AddTransient<IComicRepository, ComicRepository>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped(sp => ShoppingRepository.GetCart(sp));
+            services.AddScoped(sp => FavoriteService.GetList(sp));
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddMvc(option => option.EnableEndpointRouting = false);
@@ -91,7 +91,7 @@ namespace MyComicList
             app.UseStaticFiles();
 
             app.UseRouting();
-            
+
 
             app.UseAuthentication();
             app.UseAuthorization();

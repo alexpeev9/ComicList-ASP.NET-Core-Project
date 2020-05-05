@@ -1,18 +1,7 @@
-﻿<li class="dropdown">
-    <a asp-controller="Comic"
-       asp-action="Index"
-       class="dropdown-toggle" data-toggle="dropdown">Comics<b class="caret"></b></a>
-    <ul class="dropdown-menu">
-        @foreach (var origin in Model)
-        {
-            <li>
-                <a asp-controller="Comic" asp-action="List"
-                   asp-route-category="@origin.Name">@origin.Name</a>
-            </li>
-        }
-        <li class="divider"></li>
-        <li>
-            <a asp-controller="Comic" asp-action="List" asp-route-category="">View all comics</a>
-        </li>
-    </ul>
-</li>
+﻿@foreach (var origin in Model)
+{
+    <a class="navbar-brand"
+       asp-controller="Comic" asp-action="List"
+       asp-route-origin="@origin.Name">@origin.Name</a>
+}
+<a class="navbar-brand" asp-controller="Comic" asp-action="List" asp-route-origin=""> View all comics</a>

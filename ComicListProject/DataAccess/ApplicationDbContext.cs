@@ -16,8 +16,8 @@ namespace MyComicList.Data
         }
         public DbSet<Comic> Comics { get; set; }
         public DbSet<Origin> Origins { get; set; }
-        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
-        public DbSet<ShoppingRepository> ShoppingCarts { get; set; }
+        public DbSet<FavoriteListItem> FavoriteListItems { get; set; }
+        public DbSet<FavoriteService> FavoriteLists { get; set; }
 
     }
 }

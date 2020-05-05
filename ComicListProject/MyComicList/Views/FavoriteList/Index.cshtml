@@ -1,0 +1,35 @@
+﻿@model FavoriteListViewModel
+
+<div class="row checkoutForm">
+    <h4>Your Favorite Comic List</h4>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="text-center">Name of Comic</th>
+                <th class="text-center">Picture of Comic</th>
+                <th class="text-center">Remove from Favorite List</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var line in Model.FavoriteService.FavoriteListItems)
+            {
+            <tr>
+                <td class="text-center">@line.Comic.Title</td>
+                <td class="text-center"> <img src="@line.Comic.ImageUrl" class="img-fluid" alt="" /></td>
+                <td class="text-center">
+                    <a class="btn btn-success " id="cartButton" sp-controller="FavoriteList" asp-action="RemoveFromFavoriteList" asp-route-comicId="@line.Comic.ComicId">
+                        Remove
+                    </a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="text-right">
+        <div class="btn-group ">
+            <a class="btn btn-success" asp-controller="Comic" asp-action="List" asp-route-category="Japanese">Japanese</a>
+            <a class="btn btn-success" asp-controller="Comic" asp-action="List" asp-route-category="Korean">Korean</a>
+        </div>
+    </div>
+</div>

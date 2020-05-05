@@ -3,17 +3,16 @@
 }
     <div class="col-sm-4 col-lg-4 col-md-4">
         <div class="thumbnail">
-            <img src=@Model.ImageUrl/>
+            <img src="@Model.ImageUrl"  alt="@Model.Title" />
             <div class="caption">
-                <h3 class="pull-right">@Model.Price.ToString("c")</h3>
                 <h3>
                     <a asp-controller="Comic" asp-action="Details" asp-route-comicId="@Model.ComicId">@Model.Title</a>
                 </h3>
             </div>
             <div class="addToCart text-right">
                 <p class="button ">
-                    <a class="btn btn-success" id="cartButton" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-comicId="@Model.ComicId">
-                        Add to cart
+                    <a class="btn btn-success" id="cartButton" asp-controller="FavoriteList" asp-action="AddToFavoriteList" asp-route-comicId="@Model.ComicId">
+                        Add to Favorite
                     </a>
                 </p>
             </div>

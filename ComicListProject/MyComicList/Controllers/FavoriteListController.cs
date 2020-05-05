@@ -9,51 +9,49 @@ using System.Linq;
 
 namespace MyComicList.Controllers
 {
-    public class ShoppingCartController : Controller
+    public class FavoriteListController : Controller
     {
         private readonly IComicRepository _comicRepository;
-        private readonly ShoppingRepository _shoppingCartRepository;
+        private readonly FavoriteService _favoriteService;
 
-        public ShoppingCartController(IComicRepository comicRepository, ShoppingRepository shoppingCartRepository)
+        public FavoriteListController(IComicRepository comicRepository, FavoriteService favoriteService)
         {
             _comicRepository = comicRepository;
-            _shoppingCartRepository = shoppingCartRepository;
+            _favoriteService = favoriteService;
         }
 
         [Authorize]
         public ViewResult Index()
         {
-            var items = _shoppingCartRepository.GetShoppingCartItems();
-            _shoppingCartRepository.ShoppingCartItems = items;
+            var items = _favoriteService.GetFavoriteListItems();
+            _favoriteService.FavoriteListItems = items;
 
-            var shoppingCartViewModel = new ShoppingCartViewModel
+            var favoriteListViewModel = new FavoriteListViewModel
             {
-                ShoppingRepository = _shoppingCartRepository,
-                ShoppingCartTotal = _shoppingCartRepository.GetShoppingCartTotal()
+                FavoriteService = _favoriteService,
             };
-            return View(shoppingCartViewModel);
+            return View(favoriteListViewModel);
         }
 
         [Authorize]
-        public RedirectToActionResult AddToShoppingCart(int comicId)
+        public RedirectToActionResult AddToFavoriteList(int comicId)
         {
             var selectedComic = _comicRepository.Comics.FirstOrDefault(p => p.ComicId == comicId);
             if (selectedComic != null)
             {
-                _shoppingCartRepository.AddToCart(selectedComic, 1);
+                _favoriteService.AddToList(selectedComic, 1);
             }
             return RedirectToAction("Index");
         }
 
-        public RedirectToActionResult RemoveFromShoppingCart(int comicId)
+        public RedirectToActionResult RemoveFromFavoriteList(int comicId)
         {
             var selectedComic = _comicRepository.Comics.FirstOrDefault(p => p.ComicId == comicId);
             if (selectedComic != null)
             {
-                _shoppingCartRepository.RemoveFromCart(selectedComic);
+                _favoriteService.RemoveFromList(selectedComic);
             }
             return RedirectToAction("Index");
         }
-
     }
 }

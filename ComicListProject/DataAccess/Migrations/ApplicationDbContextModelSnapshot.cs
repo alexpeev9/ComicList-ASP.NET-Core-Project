@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyComicList.Data;
 
-namespace MyComicList.Data.Migrations
+namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -47,9 +47,6 @@ namespace MyComicList.Data.Migrations
                     b.Property<int>("OriginID")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -62,6 +59,44 @@ namespace MyComicList.Data.Migrations
                     b.HasIndex("OriginID");
 
                     b.ToTable("Comics");
+                });
+
+            modelBuilder.Entity("DataStructure.FavoriteListItem", b =>
+                {
+                    b.Property<int>("FavoriteListItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ComicId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FavoriteListId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FavoriteServiceFavoriteListId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("FavoriteListItemId");
+
+                    b.HasIndex("ComicId");
+
+                    b.HasIndex("FavoriteServiceFavoriteListId");
+
+                    b.ToTable("FavoriteListItems");
+                });
+
+            modelBuilder.Entity("DataStructure.FavoriteService", b =>
+                {
+                    b.Property<string>("FavoriteListId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("FavoriteListId");
+
+                    b.ToTable("FavoriteLists");
                 });
 
             modelBuilder.Entity("DataStructure.Origin", b =>
@@ -86,44 +121,6 @@ namespace MyComicList.Data.Migrations
                     b.HasKey("OriginID");
 
                     b.ToTable("Origins");
-                });
-
-            modelBuilder.Entity("DataStructure.ShoppingCartItem", b =>
-                {
-                    b.Property<int>("ShoppingCartItemId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ComicId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ShoppingCartId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ShoppingRepositoryShoppingCartId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("ShoppingCartItemId");
-
-                    b.HasIndex("ComicId");
-
-                    b.HasIndex("ShoppingRepositoryShoppingCartId");
-
-                    b.ToTable("ShoppingCartItems");
-                });
-
-            modelBuilder.Entity("DataStructure.ShoppingRepository", b =>
-                {
-                    b.Property<string>("ShoppingCartId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("ShoppingCartId");
-
-                    b.ToTable("ShoppingCarts");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -335,15 +332,15 @@ namespace MyComicList.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DataStructure.ShoppingCartItem", b =>
+            modelBuilder.Entity("DataStructure.FavoriteListItem", b =>
                 {
                     b.HasOne("DataStructure.Comic", "Comic")
                         .WithMany()
                         .HasForeignKey("ComicId");
 
-                    b.HasOne("DataStructure.ShoppingRepository", null)
-                        .WithMany("ShoppingCartItems")
-                        .HasForeignKey("ShoppingRepositoryShoppingCartId");
+                    b.HasOne("DataStructure.FavoriteService", null)
+                        .WithMany("FavoriteListItems")
+                        .HasForeignKey("FavoriteServiceFavoriteListId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

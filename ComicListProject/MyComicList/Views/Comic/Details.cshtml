@@ -16,7 +16,7 @@
                 @*<p class="card-text">@Model.ImageUrl.</p>*@
                 <p class="btn btn-group pull-right">
                     <a asp-controller="Comic" asp-action="List" class="btn btn-default">Show all comics</a>
-                    <button class="btn btn-success" id="cartButton" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-drinkId="@Model.ComicId">
+                    <button class="btn btn-success" id="cartButton" asp-controller="FavoriteList" asp-action="AddToFavoriteList" asp-route-comicId="@Model.ComicId">
                         Add @Model.Title to cart
                     </button>
                 </p>
