@@ -1,0 +1,9 @@
+﻿@model AuthorViewModel
+
+<p>1</p>
+<div class="row marginTop">
+    @foreach (var comic in Model.Authors)
+    {
+        <partial name="ComicsSummary" model="comic" />
+    }
+</div>

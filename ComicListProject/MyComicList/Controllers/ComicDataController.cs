@@ -21,7 +21,7 @@ namespace MyComicList.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<ComicViewModel> LoadMoreDrinks()
+        public IEnumerable<ComicViewModel> LoadMoreComics()
         {
             IEnumerable<Comic> dbComics = null;
 

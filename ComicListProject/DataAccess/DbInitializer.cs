@@ -17,6 +17,10 @@ namespace MyComicList.Data
             {
                 context.Origins.AddRange(Origins.Select(c => c.Value));
             }
+            if (!context.Authors.Any())
+            {
+                context.Authors.AddRange(Authors.Select(s => s.Value));
+            }
 
             if (!context.Comics.Any())
             {
@@ -31,8 +35,8 @@ namespace MyComicList.Data
                          ImageUrl = "https://cdn.myanimelist.net/images/manga/3/117681.jpg",
                          ImageThumbnailUrl = "https://miro.medium.com/max/630/1*QaDoXxtLkRbmoyWNlbwdNA.jpeg",
                          IsPopularComic = true,
-                         InStock = true,
                          Origin = Origins["Japanese"],
+                         Author = Authors["Kishimoto"]
                      },
                      new Comic
                      {
@@ -44,8 +48,8 @@ namespace MyComicList.Data
                          ImageUrl = "https://cdn.myanimelist.net/images/manga/4/126293.jpg",
                          ImageThumbnailUrl = "https://i0.wp.com/itsthecomicbookcommunity.com/wp-content/uploads/2019/05/e7c8afc4fc4c921715f550ba4311316f.jpg?resize=1029%2C640&ssl=1",
                          IsPopularComic = false,
-                         InStock = true,
-                         Origin = Origins["Japanese"]
+                         Origin = Origins["Japanese"],
+                         Author = Authors["Takahashi"]
                      },
                      new Comic
                      {
@@ -56,8 +60,9 @@ namespace MyComicList.Data
                          ImageUrl = "https://cdn.myanimelist.net/images/manga/3/114037.jpg",
                          ImageThumbnailUrl = "https://wallpaperaccess.com/full/140176.jpg",
                          IsPopularComic = true,
-                         InStock = false,
-                         Origin = Origins["Japanese"]
+                         Origin = Origins["Japanese"],
+                         Author = Authors["Sui"]
+
                      },
                      new Comic
                      {
@@ -68,8 +73,8 @@ namespace MyComicList.Data
                          ImageUrl = "https://cdn.myanimelist.net/images/manga/1/157931.jpg",
                          ImageThumbnailUrl = "https://www.elsetge.cat/myimg/f/168-1688056_kentaro-miura-berserk-guts-wallpapers-hd-desktop-guts.jpg",
                          IsPopularComic = false,
-                         InStock = true,
-                         Origin = Origins["Japanese"]
+                         Origin = Origins["Japanese"],
+                         Author = Authors["Sui"]
                      },
                      new Comic
                      {
@@ -80,8 +85,8 @@ namespace MyComicList.Data
                          ImageUrl = "https://cdn.myanimelist.net/images/manga/2/37846.jpg",
                          ImageThumbnailUrl = "https://66.media.tumblr.com/7ab4d4f974c8124c0a51e6b4b4c8645f/tumblr_mvytj0RXKo1r9ee9go1_1280.jpg",
                          IsPopularComic = true,
-                         InStock = true,
-                         Origin = Origins["Japanese"]
+                         Origin = Origins["Japanese"],
+                         Author = Authors["Isayama"]
                      },
                      new Comic
                      {
@@ -92,8 +97,8 @@ namespace MyComicList.Data
                          ImageUrl = "https://cdn.myanimelist.net/images/manga/3/80661.jpg",
                          ImageThumbnailUrl = "https://i1.wp.com/www.thegeeklygrind.com/wp-content/uploads/2019/05/Photo-May-22-8-04-23-PM.jpg?fit=1661%2C1160",
                          IsPopularComic = true,
-                         InStock = true,
                          Origin = Origins["Japanese"],
+                         Author = Authors["Isayama"]
                      },
 		     ///////////////////////////////////////////////////////////////////////
                      new Comic
@@ -104,8 +109,8 @@ namespace MyComicList.Data
                          ImageUrl = "https://cdn.myanimelist.net/images/manga/2/223694.jpg",
                          ImageThumbnailUrl = "https://pbs.twimg.com/media/EUHayr3XYAAM2Aj.jpg",
                          IsPopularComic = true,
-                         InStock = false,
                          Origin = Origins["Korean"],
+                         Author = Authors["Jin-Hwan"]
                      },
                      new Comic
                      {
@@ -115,8 +120,8 @@ namespace MyComicList.Data
                          ImageUrl = "https://cdn.myanimelist.net/images/manga/1/205549.jpg",
                          ImageThumbnailUrl = "https://i.pinimg.com/originals/4a/99/5c/4a995cdc8a38297d6234323105f33cd6.jpg",
                          IsPopularComic = false,
-                         InStock = false,
                          Origin = Origins["Korean"],
+                         Author = Authors["Seung-Hee"]
                      },
                      new Comic
                      {
@@ -126,8 +131,8 @@ namespace MyComicList.Data
                          ImageUrl = "https://cdn.myanimelist.net/images/manga/2/55867.jpg",
                          ImageThumbnailUrl = "https://i.pinimg.com/originals/fc/22/de/fc22de3eb24838622a46e1cdb222e66c.jpg",
                          IsPopularComic = true,
-                         InStock = true,
                          Origin = Origins["Korean"],
+                         Author = Authors["Carnby"]
                      },
                      new Comic
                      {
@@ -137,8 +142,8 @@ namespace MyComicList.Data
                          ImageUrl = "https://cdn.myanimelist.net/images/manga/3/208547.jpg",
                          ImageThumbnailUrl = "https://i.ytimg.com/vi/E-yOFMjX38k/hqdefault.jpg",
                          IsPopularComic = false,
-                         InStock = false,
-                         Origin = Origins["Korean"]
+                         Origin = Origins["Korean"],
+                         Author = Authors["Kentaro"]
                      },
                      new Comic
                      {
@@ -148,8 +153,8 @@ namespace MyComicList.Data
                          ImageUrl = "https://cdn.myanimelist.net/images/manga/3/71143.jpg",
                          ImageThumbnailUrl = "https://coffeebearexpress.files.wordpress.com/2013/04/annarasumanara-26693371.jpg",
                          IsPopularComic = true,
-                         InStock = true,
                          Origin = Origins["Korean"],
+                         Author = Authors["Seung-Hee"]
                      },
                      new Comic
                      {
@@ -159,8 +164,8 @@ namespace MyComicList.Data
                          ImageUrl = "https://cdn.myanimelist.net/images/manga/3/6683.jpg",
                          ImageThumbnailUrl = "https://4.bp.blogspot.com/-N87oBquX4dU/TkCorvYuc8I/AAAAAAAABNA/R8iscUVdKzw/141.png?imgmax=16383",
                          IsPopularComic = false,
-                         InStock = true,
                          Origin = Origins["Korean"],
+                         Author = Authors["Hichov"]
                      }
                 );
             }
@@ -191,6 +196,37 @@ namespace MyComicList.Data
                 }
 
                 return origins;
+            }
+        }
+        private static Dictionary<string, Author> authors;
+        public static Dictionary<string, Author> Authors
+        {
+            get
+            {
+                if (authors == null)
+                {
+                    var authorList = new Author[]
+                    {
+                        new Author {FirstName="Kishimoto",LastName="Kishimoto"}, 
+                        new Author {FirstName="Hajime",LastName= "Isayama" },
+                        new Author {FirstName="Ishida",LastName="Sui"},
+                        new Author {FirstName="Kazuki",LastName="Takahashi"},
+                        new Author {FirstName="Miura",LastName="Kentaro"},
+                        new Author {FirstName="Park",LastName="Jin-Hwan"},
+                        new Author {FirstName="Kim",LastName="Carnby"},
+                        new Author {FirstName="Han",LastName="Seung-Hee"},
+                        new Author {FirstName="Cosmos",LastName="Hichov"},
+                    };
+
+                    authors = new Dictionary<string, Author>();
+
+                    foreach (Author author in authorList)
+                    {
+                        authors.Add(author.LastName, author);
+                    }
+                }
+
+                return authors;
             }
         }
     }

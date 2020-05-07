@@ -27,12 +27,15 @@
                     </div>
                 </form>
                 <partial name="_LoginPartial" />
-            </div>            
+            </div>
         </nav>
         <div class="container">
             @await Component.InvokeAsync("OriginMenu")
         </div>
-  
+        <div class="container">
+            @await Component.InvokeAsync("AuthorMenu")
+        </div>
+
         <div class="container body-content" style="padding:50px;">
             @RenderBody()
             <hr />

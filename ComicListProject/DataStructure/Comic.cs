@@ -20,10 +20,10 @@
         public string ImageThumbnailUrl { get; set; }
         [Required]
         public bool IsPopularComic { get; set; }
-        [Required]
-        public bool InStock { get; set; }
-
         public int OriginID { get; set; }
         public virtual Origin Origin { get; set; }
+
+        public int AuthorId { get; set; }
+        public virtual Author Author { get; set; }
     }
 }

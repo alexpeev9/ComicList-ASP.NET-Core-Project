@@ -1,0 +1,8 @@
+﻿@foreach (var author in Model)
+{
+    <a class="navbar-brand"
+       asp-controller="Comic" asp-action="ListAuthor"
+       asp-route-author="@author.LastName"> @author.FirstName @author.LastName</a>
+}
+
+

@@ -9,6 +9,5 @@ namespace DataAccess.Interfaces
     {
         IEnumerable<Comic> Comics { get; }
         IEnumerable<Comic> PreferredComics { get; }
-        //Comic GetComicById(int drinkId);
     }
 }

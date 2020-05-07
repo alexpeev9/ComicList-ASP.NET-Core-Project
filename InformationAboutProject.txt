@@ -1,8 +1,1 @@
-Проектът е направен на ASP.NET Core Web Application MVC - Empty. Проектът е разделен на 3 части. 
-	Първата е DataStructure която е вид Class Library (.NET Core) в която се съхраняват
-Моделите на Комикс,Жанр,Произход,Студио. Те са свързани помежду си като Origin има връзка към 
-Comics one to one, Genre има връзка към Comics one to many и Studio има връзка many to many.
-	Втората част е DataAccess, която пак е вид Class Library (.NET Core) в която се съхранява
-DbContext-а,Репозиторитата и Миграциите.
-	Третата част е главната MyComicList(ASP.NET Core Web Application)която е ядрото на проекта и 
-тя използвайки DataStructure и DataAccess създава цялостта на проека.
+Проектът е направен на ASP.NET Core Web Application MVC.

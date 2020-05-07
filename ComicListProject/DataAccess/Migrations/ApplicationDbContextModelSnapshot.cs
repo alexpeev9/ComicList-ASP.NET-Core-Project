@@ -19,12 +19,35 @@ namespace DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("DataStructure.Author", b =>
+                {
+                    b.Property<int>("AuthorId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AuthorId");
+
+                    b.ToTable("Authors");
+                });
+
             modelBuilder.Entity("DataStructure.Comic", b =>
                 {
                     b.Property<int>("ComicId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("int");
 
                     b.Property<string>("ImageThumbnailUrl")
                         .IsRequired()
@@ -33,9 +56,6 @@ namespace DataAccess.Migrations
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("InStock")
-                        .HasColumnType("bit");
 
                     b.Property<string>("Info")
                         .IsRequired()
@@ -55,6 +75,8 @@ namespace DataAccess.Migrations
                         .HasColumnType("tinyint");
 
                     b.HasKey("ComicId");
+
+                    b.HasIndex("AuthorId");
 
                     b.HasIndex("OriginID");
 
@@ -325,6 +347,12 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("DataStructure.Comic", b =>
                 {
+                    b.HasOne("DataStructure.Author", "Author")
+                        .WithMany("Comics")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("DataStructure.Origin", "Origin")
                         .WithMany("Comics")
                         .HasForeignKey("OriginID")

@@ -62,6 +62,7 @@ namespace MyComicList
             });
 
             services.AddTransient<IOriginRepository, OriginRepository>();
+            services.AddTransient<IAuthorRepository, AuthorRepository>();
             services.AddTransient<IComicRepository, ComicRepository>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => FavoriteService.GetList(sp));
@@ -109,13 +110,18 @@ namespace MyComicList
             {
                 routes.MapRoute(
                    name: "comicdetails",
-                   template: "Comic/Details/{omicId?}",
+                   template: "Comic/Details/{comicId?}",
                    defaults: new { Controller = "Comic", action = "Details" });
 
                 routes.MapRoute(
                     name: "originfilter",
                     template: "Comic/{action}/{origin?}",
                     defaults: new { Controller = "Comic", action = "List" });
+
+                routes.MapRoute(
+                    name: "authorfilter",
+                    template: "Comic/{action}/{author?}",
+                    defaults: new { Controller = "Comic", action = "ListAuthor" });
 
                 routes.MapRoute(
                     name: "default",

@@ -47,6 +47,20 @@ namespace DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Authors",
+                columns: table => new
+                {
+                    AuthorId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(nullable: false),
+                    LastName = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Authors", x => x.AuthorId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "FavoriteLists",
                 columns: table => new
                 {
@@ -190,12 +204,18 @@ namespace DataAccess.Migrations
                     ImageUrl = table.Column<string>(nullable: false),
                     ImageThumbnailUrl = table.Column<string>(nullable: false),
                     IsPopularComic = table.Column<bool>(nullable: false),
-                    InStock = table.Column<bool>(nullable: false),
-                    OriginID = table.Column<int>(nullable: false)
+                    OriginID = table.Column<int>(nullable: false),
+                    AuthorId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Comics", x => x.ComicId);
+                    table.ForeignKey(
+                        name: "FK_Comics_Authors_AuthorId",
+                        column: x => x.AuthorId,
+                        principalTable: "Authors",
+                        principalColumn: "AuthorId",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Comics_Origins_OriginID",
                         column: x => x.OriginID,
@@ -272,6 +292,11 @@ namespace DataAccess.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Comics_AuthorId",
+                table: "Comics",
+                column: "AuthorId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Comics_OriginID",
                 table: "Comics",
                 column: "OriginID");
@@ -318,6 +343,9 @@ namespace DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "FavoriteLists");
+
+            migrationBuilder.DropTable(
+                name: "Authors");
 
             migrationBuilder.DropTable(
                 name: "Origins");

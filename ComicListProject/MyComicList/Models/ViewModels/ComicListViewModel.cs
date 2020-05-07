@@ -11,6 +11,7 @@ namespace MyComicList.Models.ViewModels
 
 
         public IEnumerable <Comic> Comics { get; set; }
+
         public string CurrentOrigin { get; set; }
     }
 }

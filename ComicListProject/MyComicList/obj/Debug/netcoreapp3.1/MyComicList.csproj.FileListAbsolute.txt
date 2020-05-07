@@ -97,3 +97,5 @@ C:\Users\alexp\Desktop\AspNetProjects\MyComicList\MyComicList\obj\Debug\netcorea
 C:\Users\alexp\Desktop\AspNetProjects\MyComicList\MyComicList\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\alexp\Desktop\AspNetProjects\MyComicList\MyComicList\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\FavoriteListSummary\Default.cshtml.g.cs
 C:\Users\alexp\Desktop\AspNetProjects\MyComicList\MyComicList\obj\Debug\netcoreapp3.1\Razor\Views\FavoriteList\Index.cshtml.g.cs
+C:\Users\alexp\Desktop\AspNetProjects\MyComicList\MyComicList\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\AuthorMenu\Default.cshtml.g.cs
+C:\Users\alexp\Desktop\AspNetProjects\MyComicList\MyComicList\obj\Debug\netcoreapp3.1\Razor\Views\Comic\ListAuthor.cshtml.g.cs
