@@ -25,7 +25,7 @@ namespace MyComicList.Controllers
         {
             IEnumerable<Comic> dbComics = null;
 
-            dbComics = _comicRepository.Comics.OrderBy(p => p.ComicId).Take(10);
+            dbComics = _comicRepository.Comics.OrderBy(p => p.ComicId).Take(20);
 
             List<ComicViewModel> comics = new List<ComicViewModel>();
 
@@ -39,9 +39,9 @@ namespace MyComicList.Controllers
         private ComicViewModel MapDbComicToComicViewModel(Comic dbComic) => new ComicViewModel()
         {
             ComicId = dbComic.ComicId,
-            Name = dbComic.Title,
-            ImageUrl = dbComic.ImageUrl
+            
         };
+
 
     }
 }

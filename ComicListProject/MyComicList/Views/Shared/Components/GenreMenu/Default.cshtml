@@ -1,0 +1,7 @@
+﻿@foreach (var genre in Model)
+{
+    <a class="navbar-brand"
+       asp-controller="Comic" asp-action="ListGenre"
+       asp-route-genre="@genre.Name">@genre.Name <img src="@genre.Icon" class="img-fluid" alt=""></a>
+}
+<a class="navbar-brand" asp-controller="Comic" asp-action="List" asp-route-origin=""> View all comics</a>

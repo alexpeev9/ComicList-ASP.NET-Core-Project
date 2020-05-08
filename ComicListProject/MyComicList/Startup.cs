@@ -63,6 +63,7 @@ namespace MyComicList
 
             services.AddTransient<IOriginRepository, OriginRepository>();
             services.AddTransient<IAuthorRepository, AuthorRepository>();
+            services.AddTransient<IGenreRepository, GenreRepository>();
             services.AddTransient<IComicRepository, ComicRepository>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => FavoriteService.GetList(sp));
@@ -122,6 +123,11 @@ namespace MyComicList
                     name: "authorfilter",
                     template: "Comic/{action}/{author?}",
                     defaults: new { Controller = "Comic", action = "ListAuthor" });
+                
+                routes.MapRoute(
+                   name: "genrefilter",
+                   template: "Comic/{action}/{genre?}",
+                   defaults: new { Controller = "Comic", action = "ListGenre" });
 
                 routes.MapRoute(
                     name: "default",

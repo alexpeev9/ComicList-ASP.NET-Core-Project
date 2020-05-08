@@ -5,10 +5,15 @@ using System.Text;
 
 namespace DataStructure
 {
-    class Genre
+    public class Genre
     {
         [Required]
         public int GenreId { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+        [Required]
+        public string Icon { get; set; }
         public List<Comic> Comics { get; set; }
     }
 }

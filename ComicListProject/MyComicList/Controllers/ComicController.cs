@@ -1,5 +1,6 @@
 ﻿
 using DataAccess.Interfaces;
+using DataAccess.Repositories;
 using DataStructure;
 using Microsoft.AspNetCore.Mvc;
 using MyComicList.Models.ViewModels;
@@ -16,12 +17,14 @@ namespace MyComicList.Controllers
         private readonly IComicRepository _comicRepository;
         private readonly IOriginRepository _originRepository;
         private readonly IAuthorRepository _authorRepository;
+        private readonly IGenreRepository _genreRepository;
 
-        public ComicController(IComicRepository comicRepository, IOriginRepository originRepository, IAuthorRepository authorRepository)
+        public ComicController(IComicRepository comicRepository, IOriginRepository originRepository, IAuthorRepository authorRepository, IGenreRepository genreRepository)
         {
             _comicRepository = comicRepository;
             _originRepository = originRepository;
             _authorRepository = authorRepository;
+            _genreRepository = genreRepository;
         }
         public ViewResult ListAuthor(string author)
         {
@@ -57,10 +60,42 @@ namespace MyComicList.Controllers
                 currentAuthor = _author;
             }
 
-            return View(new AuthorViewModel
+            return View("~/Views/Comic/ListAuthor.cshtml",new AuthorViewModel
             {
                 Authors = comics,
                 CurrentAuthor = currentAuthor
+            });
+        }
+        public ViewResult ListGenre(string genre)
+        {
+            string _genre = genre;
+            IEnumerable<Comic> comics;
+            string currentGenre = string.Empty;
+
+            if (string.IsNullOrEmpty(genre))
+            {
+                comics = _comicRepository.Comics;
+                currentGenre = "All Comics";
+            }
+            else
+            {
+                if (string.Equals("Action", _genre, StringComparison.OrdinalIgnoreCase))
+                    comics = _comicRepository.Comics.Where(s => s.Genre.Name.Equals("Action"));
+                else if (string.Equals("Drama", _genre, StringComparison.OrdinalIgnoreCase))
+                    comics = _comicRepository.Comics.Where(s => s.Genre.Name.Equals("Drama"));
+                else if (string.Equals("Comedy", _genre, StringComparison.OrdinalIgnoreCase))
+                    comics = _comicRepository.Comics.Where(s => s.Genre.Name.Equals("Comedy"));
+                else if (string.Equals("Horror", _genre, StringComparison.OrdinalIgnoreCase))
+                    comics = _comicRepository.Comics.Where(s => s.Genre.Name.Equals("Horror"));
+                else comics = _comicRepository.Comics.Where(s => s.Genre.Name.Equals("Romance"));
+
+                currentGenre = _genre;
+            }
+
+            return View("~/Views/Comic/ListGenre.cshtml",new GenreViewModel
+            {
+                Genres = comics,
+                CurrentGenre = currentGenre
             });
         }
         public ViewResult List(string origin)

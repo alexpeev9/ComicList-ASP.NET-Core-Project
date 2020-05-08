@@ -21,6 +21,10 @@ namespace MyComicList.Data
             {
                 context.Authors.AddRange(Authors.Select(s => s.Value));
             }
+            if (!context.Genres.Any())
+            {
+                context.Genres.AddRange(Genres.Select(d => d.Value));
+            }
 
             if (!context.Comics.Any())
             {
@@ -36,7 +40,8 @@ namespace MyComicList.Data
                          ImageThumbnailUrl = "https://miro.medium.com/max/630/1*QaDoXxtLkRbmoyWNlbwdNA.jpeg",
                          IsPopularComic = true,
                          Origin = Origins["Japanese"],
-                         Author = Authors["Kishimoto"]
+                         Author = Authors["Kishimoto"],
+                         Genre = Genres["Action"]
                      },
                      new Comic
                      {
@@ -49,7 +54,8 @@ namespace MyComicList.Data
                          ImageThumbnailUrl = "https://i0.wp.com/itsthecomicbookcommunity.com/wp-content/uploads/2019/05/e7c8afc4fc4c921715f550ba4311316f.jpg?resize=1029%2C640&ssl=1",
                          IsPopularComic = false,
                          Origin = Origins["Japanese"],
-                         Author = Authors["Takahashi"]
+                         Author = Authors["Takahashi"],
+                         Genre = Genres["Action"]
                      },
                      new Comic
                      {
@@ -61,7 +67,8 @@ namespace MyComicList.Data
                          ImageThumbnailUrl = "https://wallpaperaccess.com/full/140176.jpg",
                          IsPopularComic = true,
                          Origin = Origins["Japanese"],
-                         Author = Authors["Sui"]
+                         Author = Authors["Sui"],
+                         Genre = Genres["Drama"]
 
                      },
                      new Comic
@@ -74,7 +81,8 @@ namespace MyComicList.Data
                          ImageThumbnailUrl = "https://www.elsetge.cat/myimg/f/168-1688056_kentaro-miura-berserk-guts-wallpapers-hd-desktop-guts.jpg",
                          IsPopularComic = false,
                          Origin = Origins["Japanese"],
-                         Author = Authors["Sui"]
+                         Author = Authors["Sui"],
+                         Genre = Genres["Action"]
                      },
                      new Comic
                      {
@@ -86,7 +94,8 @@ namespace MyComicList.Data
                          ImageThumbnailUrl = "https://66.media.tumblr.com/7ab4d4f974c8124c0a51e6b4b4c8645f/tumblr_mvytj0RXKo1r9ee9go1_1280.jpg",
                          IsPopularComic = true,
                          Origin = Origins["Japanese"],
-                         Author = Authors["Isayama"]
+                         Author = Authors["Isayama"],
+                         Genre = Genres["Action"]
                      },
                      new Comic
                      {
@@ -98,7 +107,9 @@ namespace MyComicList.Data
                          ImageThumbnailUrl = "https://i1.wp.com/www.thegeeklygrind.com/wp-content/uploads/2019/05/Photo-May-22-8-04-23-PM.jpg?fit=1661%2C1160",
                          IsPopularComic = true,
                          Origin = Origins["Japanese"],
-                         Author = Authors["Isayama"]
+                         Author = Authors["Isayama"],
+                         Genre = Genres["Comedy"],
+
                      },
 		     ///////////////////////////////////////////////////////////////////////
                      new Comic
@@ -110,7 +121,8 @@ namespace MyComicList.Data
                          ImageThumbnailUrl = "https://pbs.twimg.com/media/EUHayr3XYAAM2Aj.jpg",
                          IsPopularComic = true,
                          Origin = Origins["Korean"],
-                         Author = Authors["Jin-Hwan"]
+                         Author = Authors["Jin-Hwan"],
+                         Genre = Genres["Romance"]
                      },
                      new Comic
                      {
@@ -121,7 +133,8 @@ namespace MyComicList.Data
                          ImageThumbnailUrl = "https://i.pinimg.com/originals/4a/99/5c/4a995cdc8a38297d6234323105f33cd6.jpg",
                          IsPopularComic = false,
                          Origin = Origins["Korean"],
-                         Author = Authors["Seung-Hee"]
+                         Author = Authors["Seung-Hee"],
+                         Genre = Genres["Romance"]
                      },
                      new Comic
                      {
@@ -132,7 +145,8 @@ namespace MyComicList.Data
                          ImageThumbnailUrl = "https://i.pinimg.com/originals/fc/22/de/fc22de3eb24838622a46e1cdb222e66c.jpg",
                          IsPopularComic = true,
                          Origin = Origins["Korean"],
-                         Author = Authors["Carnby"]
+                         Author = Authors["Carnby"],
+                         Genre = Genres["Horror"]
                      },
                      new Comic
                      {
@@ -143,7 +157,8 @@ namespace MyComicList.Data
                          ImageThumbnailUrl = "https://i.ytimg.com/vi/E-yOFMjX38k/hqdefault.jpg",
                          IsPopularComic = false,
                          Origin = Origins["Korean"],
-                         Author = Authors["Kentaro"]
+                         Author = Authors["Kentaro"],
+                         Genre = Genres["Drama"]
                      },
                      new Comic
                      {
@@ -154,7 +169,8 @@ namespace MyComicList.Data
                          ImageThumbnailUrl = "https://coffeebearexpress.files.wordpress.com/2013/04/annarasumanara-26693371.jpg",
                          IsPopularComic = true,
                          Origin = Origins["Korean"],
-                         Author = Authors["Seung-Hee"]
+                         Author = Authors["Seung-Hee"],
+                         Genre = Genres["Comedy"]
                      },
                      new Comic
                      {
@@ -165,7 +181,8 @@ namespace MyComicList.Data
                          ImageThumbnailUrl = "https://4.bp.blogspot.com/-N87oBquX4dU/TkCorvYuc8I/AAAAAAAABNA/R8iscUVdKzw/141.png?imgmax=16383",
                          IsPopularComic = false,
                          Origin = Origins["Korean"],
-                         Author = Authors["Hichov"]
+                         Author = Authors["Hichov"],
+                         Genre = Genres["Drama"]
                      }
                 );
             }
@@ -227,6 +244,33 @@ namespace MyComicList.Data
                 }
 
                 return authors;
+            }
+        }
+        private static Dictionary<string, Genre> genres;
+        public static Dictionary<string, Genre> Genres
+        {
+            get
+            {
+                if (genres == null)
+                {
+                    var genreList = new Genre[]
+                    {
+                        new Genre {Name="Action",Icon="https://img.icons8.com/ios-filled/50/000000/action.png"},
+                        new Genre {Name="Drama",Icon="https://img.icons8.com/pastel-glyph/64/000000/theatre-mask.png"},
+                        new Genre {Name="Comedy",Icon="https://img.icons8.com/pastel-glyph/64/000000/charlie-chaplin.png"},
+                        new Genre {Name="Horror",Icon="https://img.icons8.com/android/24/000000/horror.png"},
+                        new Genre {Name="Romance",Icon="https://img.icons8.com/android/24/000000/novel.png"}
+                    };
+
+                    genres = new Dictionary<string, Genre>();
+
+                    foreach (Genre genre in genreList)
+                    {
+                        genres.Add(genre.Name, genre);
+                    }
+                }
+
+                return genres;
             }
         }
     }

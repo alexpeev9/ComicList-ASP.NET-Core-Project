@@ -35,6 +35,9 @@
         <div class="container">
             @await Component.InvokeAsync("AuthorMenu")
         </div>
+        <div class="container">
+            @await Component.InvokeAsync("GenreMenu")
+        </div>
 
         <div class="container body-content" style="padding:50px;">
             @RenderBody()

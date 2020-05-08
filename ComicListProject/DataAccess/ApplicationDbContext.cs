@@ -17,6 +17,7 @@ namespace MyComicList.Data
         public DbSet<Comic> Comics { get; set; }
         public DbSet<Origin> Origins { get; set; }
         public DbSet<Author> Authors { get; set; }
+        public DbSet<Genre> Genres { get; set; }
         public DbSet<FavoriteListItem> FavoriteListItems { get; set; }
         public DbSet<FavoriteService> FavoriteLists { get; set; }
 

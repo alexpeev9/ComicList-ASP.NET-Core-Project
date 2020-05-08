@@ -1,7 +1,7 @@
-﻿@model AuthorViewModel
+﻿@model GenreViewModel
 
 <div class="row marginTop">
-    @foreach (var comic in Model.Authors)
+    @foreach (var comic in Model.Genres)
     {
         <partial name="ComicsSummary" model="comic" />
     }

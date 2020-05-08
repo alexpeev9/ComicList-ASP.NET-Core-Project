@@ -72,6 +72,20 @@ namespace DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Genres",
+                columns: table => new
+                {
+                    GenreId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: false),
+                    Icon = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Genres", x => x.GenreId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Origins",
                 columns: table => new
                 {
@@ -205,7 +219,8 @@ namespace DataAccess.Migrations
                     ImageThumbnailUrl = table.Column<string>(nullable: false),
                     IsPopularComic = table.Column<bool>(nullable: false),
                     OriginID = table.Column<int>(nullable: false),
-                    AuthorId = table.Column<int>(nullable: false)
+                    AuthorId = table.Column<int>(nullable: false),
+                    GenreId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -215,6 +230,12 @@ namespace DataAccess.Migrations
                         column: x => x.AuthorId,
                         principalTable: "Authors",
                         principalColumn: "AuthorId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Comics_Genres_GenreId",
+                        column: x => x.GenreId,
+                        principalTable: "Genres",
+                        principalColumn: "GenreId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Comics_Origins_OriginID",
@@ -297,6 +318,11 @@ namespace DataAccess.Migrations
                 column: "AuthorId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Comics_GenreId",
+                table: "Comics",
+                column: "GenreId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Comics_OriginID",
                 table: "Comics",
                 column: "OriginID");
@@ -346,6 +372,9 @@ namespace DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "Authors");
+
+            migrationBuilder.DropTable(
+                name: "Genres");
 
             migrationBuilder.DropTable(
                 name: "Origins");

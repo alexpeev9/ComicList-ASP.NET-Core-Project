@@ -49,6 +49,9 @@ namespace DataAccess.Migrations
                     b.Property<int>("AuthorId")
                         .HasColumnType("int");
 
+                    b.Property<int>("GenreId")
+                        .HasColumnType("int");
+
                     b.Property<string>("ImageThumbnailUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -77,6 +80,8 @@ namespace DataAccess.Migrations
                     b.HasKey("ComicId");
 
                     b.HasIndex("AuthorId");
+
+                    b.HasIndex("GenreId");
 
                     b.HasIndex("OriginID");
 
@@ -119,6 +124,26 @@ namespace DataAccess.Migrations
                     b.HasKey("FavoriteListId");
 
                     b.ToTable("FavoriteLists");
+                });
+
+            modelBuilder.Entity("DataStructure.Genre", b =>
+                {
+                    b.Property<int>("GenreId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Icon")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("GenreId");
+
+                    b.ToTable("Genres");
                 });
 
             modelBuilder.Entity("DataStructure.Origin", b =>
@@ -350,6 +375,12 @@ namespace DataAccess.Migrations
                     b.HasOne("DataStructure.Author", "Author")
                         .WithMany("Comics")
                         .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DataStructure.Genre", "Genre")
+                        .WithMany("Comics")
+                        .HasForeignKey("GenreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

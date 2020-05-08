@@ -17,7 +17,7 @@ namespace DataAccess.Repositories
             _appDbContext = appDbContext;
         }
 
-        public IEnumerable<Comic> Comics => _appDbContext.Comics.Include(c => c.Author).Include(c => c.Origin);
+        public IEnumerable<Comic> Comics => _appDbContext.Comics.Include(c => c.Author).Include(c => c.Origin).Include(c =>c.Genre);
 
         public IEnumerable<Comic> PreferredComics => _appDbContext.Comics.Where(p => p.IsPopularComic).Include(c => c.Origin);
 
