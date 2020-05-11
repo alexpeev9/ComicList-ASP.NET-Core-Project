@@ -1,7 +1,7 @@
 ﻿@foreach (var origin in Model)
 {
     <a class="navbar-brand"
-       asp-controller="Comic" asp-action="List"
+       asp-controller="Origin" asp-action="ListOrigin"
        asp-route-origin="@origin.Name">@origin.Name</a>
 }
-<a class="navbar-brand" asp-controller="Comic" asp-action="List" asp-route-origin=""> View all comics</a>
+<a class="navbar-brand" asp-controller="Origin" asp-action="ListOrigin"> View all comics</a>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyComicList.Models.ViewModels
 {
-    public class AuthorViewModel
+    public class AuthorViewModel 
     {
         public IEnumerable<Comic> Comics { get; set; }
         public IEnumerable<Comic> Authors { get; set; }

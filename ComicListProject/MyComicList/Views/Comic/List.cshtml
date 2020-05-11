@@ -1,9 +1,8 @@
 ﻿@model ComicListViewModel
 
-    <div class="row marginTop">
-        @foreach (var comic in Model.Comics)
-        {
-           
-            <partial name="ComicsSummary" model="comic" />
-        }
-    </div>
+<div class="row marginTop">
+   @foreach (var comic in Model.Comics)
+    {
+        <partial name="ComicsSummary" model="comic" />
+    }
+</div>

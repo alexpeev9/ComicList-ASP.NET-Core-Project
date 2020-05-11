@@ -1,0 +1,8 @@
+﻿@model OriginViewModel
+
+    <div class="row marginTop">
+        @foreach (var comic in Model.Origins)
+        {
+            <partial name="ComicsSummary" model="comic" />
+        }
+    </div>

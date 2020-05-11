@@ -10,6 +10,5 @@ namespace MyComicList.Models.ViewModels
     public class FavoriteListViewModel
     {
         public FavoriteService FavoriteService { get; set; }
-        //public decimal ShoppingCartTotal { get; set; }
     }
 }

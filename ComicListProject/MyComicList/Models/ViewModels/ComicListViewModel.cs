@@ -8,10 +8,7 @@ namespace MyComicList.Models.ViewModels
 {
     public class ComicListViewModel
     {
-
-
-        public IEnumerable <Comic> Comics { get; set; }
-
-        public string CurrentOrigin { get; set; }
+        public IEnumerable<Comic> Comics { get; set; }
+        public string CurrentComic { get; set; }
     }
 }

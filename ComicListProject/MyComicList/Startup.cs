@@ -97,37 +97,35 @@ namespace MyComicList
 
             app.UseAuthentication();
             app.UseAuthorization();
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllerRoute(
-            //        name: "default",
-            //        pattern: "{controller=Home}/{action=Index}/{id?}");
-            //    endpoints.MapRazorPages();
-            //});
             app.UseSession();
             app.UseStatusCodePages();
             //app.UseMvcWithDefaultRoute();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                   name: "comicdetails",
-                   template: "Comic/Details/{comicId?}",
-                   defaults: new { Controller = "Comic", action = "Details" });
+                    name: "comicdetails",
+                    template: "Comic/{action}/{comicid?}",
+                    defaults: new { Controller = "Comic" });
 
                 routes.MapRoute(
-                    name: "originfilter",
-                    template: "Comic/{action}/{origin?}",
-                    defaults: new { Controller = "Comic", action = "List" });
+                   name: "allcomic",
+                   template: "Comic/{action}/{comic?}",
+                   defaults: new { Controller = "Comic", action = "List" });
+
+                routes.MapRoute(
+                   name: "originfilter",
+                   template: "Comic/{action}/{origin?}",
+                   defaults: new { Controller = "Origin", action = "ListOrigin" });
 
                 routes.MapRoute(
                     name: "authorfilter",
-                    template: "Comic/{action}/{author?}",
-                    defaults: new { Controller = "Comic", action = "ListAuthor" });
+                   template: "Comic/{action}/{author?}",
+                    defaults: new { Controller = "Author", action = "ListAuthor" });
                 
                 routes.MapRoute(
                    name: "genrefilter",
                    template: "Comic/{action}/{genre?}",
-                   defaults: new { Controller = "Comic", action = "ListGenre" });
+                   defaults: new { Controller = "Genre", action = "ListGenre" });
 
                 routes.MapRoute(
                     name: "default",
