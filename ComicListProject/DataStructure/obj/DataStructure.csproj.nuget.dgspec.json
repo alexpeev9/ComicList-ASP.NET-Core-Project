@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexp\\Desktop\\AspNetProjects\\MyComicList\\DataStructure\\DataStructure.csproj": {}
+    "C:\\Users\\alexp\\Desktop\\AspNetProjects\\New folder\\DataStructure\\DataStructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexp\\Desktop\\AspNetProjects\\MyComicList\\DataStructure\\DataStructure.csproj": {
+    "C:\\Users\\alexp\\Desktop\\AspNetProjects\\New folder\\DataStructure\\DataStructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\MyComicList\\DataStructure\\DataStructure.csproj",
+        "projectUniqueName": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\New folder\\DataStructure\\DataStructure.csproj",
         "projectName": "DataStructure",
-        "projectPath": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\MyComicList\\DataStructure\\DataStructure.csproj",
+        "projectPath": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\New folder\\DataStructure\\DataStructure.csproj",
         "packagesPath": "C:\\Users\\alexp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\MyComicList\\DataStructure\\obj\\",
+        "outputPath": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\New folder\\DataStructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,10 +41,6 @@
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
               "version": "[2.2.5, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[3.1.3, )"
             }
           },
           "imports": [

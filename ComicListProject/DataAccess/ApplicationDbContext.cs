@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MyComicList.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser, IdentityRole, string>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -21,5 +21,18 @@ namespace MyComicList.Data
         public DbSet<FavoriteListItem> FavoriteListItems { get; set; }
         public DbSet<FavoriteService> FavoriteLists { get; set; }
 
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole { Name = "User", NormalizedName = "User".ToUpper() }, 
+                new IdentityRole { Name = "Administrator", NormalizedName = "Administrator".ToUpper() });
+        }
     }
 }

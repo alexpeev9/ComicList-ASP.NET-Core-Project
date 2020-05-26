@@ -1,5 +1,7 @@
 ﻿using DataStructure;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +27,6 @@ namespace MyComicList.Data
             {
                 context.Genres.AddRange(Genres.Select(d => d.Value));
             }
-
             if (!context.Comics.Any())
             {
                 context.AddRange
@@ -86,7 +87,7 @@ namespace MyComicList.Data
                      },
                      new Comic
                      {
-                         Title= "Attack on Titan",
+                         Title = "Attack on Titan",
                          Info = "In the present day, life within the walls has finally found peace, since the residents have not dealt with titans for many years. Eren Yeager, Mikasa Ackerman, and Armin Arlert are three young children " +
                         "who dream of experiencing all that the world has to offer",
                          Volumes = 6,
@@ -111,7 +112,7 @@ namespace MyComicList.Data
                          Genre = Genres["Comedy"],
 
                      },
-		     ///////////////////////////////////////////////////////////////////////
+                     ///////////////////////////////////////////////////////////////////////
                      new Comic
                      {
                          Title = "Tower of God",
@@ -224,7 +225,7 @@ namespace MyComicList.Data
                 {
                     var authorList = new Author[]
                     {
-                        new Author {FirstName="Kishimoto",LastName="Kishimoto"}, 
+                        new Author {FirstName="Kishimoto",LastName="Kishimoto"},
                         new Author {FirstName="Hajime",LastName= "Isayama" },
                         new Author {FirstName="Ishida",LastName="Sui"},
                         new Author {FirstName="Kazuki",LastName="Takahashi"},
@@ -273,5 +274,24 @@ namespace MyComicList.Data
                 return genres;
             }
         }
+        public static void SeedUsers(UserManager<IdentityUser> userManager)
+        {
+            if (userManager.FindByEmailAsync("admin12@abv.bg").Result == null)
+            {
+                IdentityUser user = new IdentityUser
+                {
+                    UserName = "admin12@abv.bg",
+                    Email = "admin12@abv.bg"
+                };
+
+                IdentityResult result = userManager.CreateAsync(user, "admin12").Result;
+
+                if (result.Succeeded)
+                {
+                    userManager.AddToRoleAsync(user, "Administrator").Wait();
+                }
+            }
+        }
     }
+
 }

@@ -1,20 +1,19 @@
 ﻿@model HomeViewModel
 
-@*@{
+@{
     ViewData["Title"] = "Home Page";
-}*@
+}
+    <img src="~/Pictures/jultoicon.png">
+     <h1 class="titlemy">My Comic List</h1>
+<br />
+<br/>
+<div>
+        <div class="row">
+            @foreach (var comic in Model.PreferedComics)
+            {
 
-<div class="text-center">
+                <partial name="ComicsSummary" model="comic" />
 
-    <h2>Prefered comics of the week </h2>
-    <br>
-
-    <div class="row">
-        @foreach (var comic in Model.PreferedComics)
-        {
-
-            <partial name="ComicsSummary" model="comic" />
-
-        }
+            }
+        </div>
     </div>
-</div>

@@ -273,6 +273,16 @@ namespace DataAccess.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "f8fae3b5-e1b9-49d1-86b4-add94c3b7255", "a72f867f-3a1c-4b9f-b8f5-7dd04733ad0c", "User", "USER" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "56157cb7-e823-45bc-a5e9-d61a090f6075", "b2d4fc13-efc2-4133-854e-8adfd5ad978e", "Administrator", "ADMINISTRATOR" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",

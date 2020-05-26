@@ -34,3 +34,12 @@ C:\Users\alexp\Desktop\AspNetProjects\MyComicList\DataStructure\obj\Debug\netcor
 C:\Users\alexp\Desktop\AspNetProjects\MyComicList\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.dll
 C:\Users\alexp\Desktop\AspNetProjects\MyComicList\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.pdb
 C:\Users\alexp\Desktop\AspNetProjects\MyComicList\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.csproj.CoreCompileInputs.cache
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataStructure\bin\Debug\netcoreapp3.1\DataStructure.deps.json
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataStructure\bin\Debug\netcoreapp3.1\DataStructure.dll
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataStructure\bin\Debug\netcoreapp3.1\DataStructure.pdb
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.csprojAssemblyReference.cache
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.AssemblyInfoInputs.cache
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.AssemblyInfo.cs
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.dll
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.pdb
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.csproj.CoreCompileInputs.cache

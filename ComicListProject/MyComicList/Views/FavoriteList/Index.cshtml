@@ -5,19 +5,21 @@
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th class="text-center">Name of Comic</th>
-                <th class="text-center">Picture of Comic</th>
-                <th class="text-center">Remove from Favorite List</th>
+                <th class="align-middle">Name of Comic</th>
+                <th class="align-middle">Picture of Comic</th>
+                <th class="align-middle">Information about the Comic</th>
+                <th class="align-middle">Remove from Favorite List</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var line in Model.FavoriteService.FavoriteListItems)
             {
             <tr>
-                <td class="text-center">@line.Comic.Title</td>
-                <td class="text-center"> <img src="@line.Comic.ImageUrl" class="img-fluid" alt="" /></td>
-                <td class="text-center">
-                    <a class="btn btn-success " id="cartButton" sp-controller="FavoriteList" asp-action="RemoveFromFavoriteList" asp-route-comicId="@line.Comic.ComicId">
+                <td class="align-middle">@line.Comic.Title</td>
+                <td class="align-middle"> <img src="@line.Comic.ImageUrl" class="img-fluid" alt="" /></td>
+                <td class="align-middle" style="text-align: justify">@line.Comic.Info</td>
+                <td class="align-middle">
+                    <a class="btn btn-primary" id="cartButton" sp-controller="FavoriteList" asp-action="RemoveFromFavoriteList" asp-route-comicId="@line.Comic.ComicId">
                         Remove
                     </a>
                 </td>
@@ -28,9 +30,9 @@
 
     <div class="text-right">
         <div class="btn-group ">
-            <a class="btn btn-success" asp-controller="Comic" asp-action="List" asp-route-category="Japanese">Japanese</a>
-            <a class="btn btn-success" asp-controller="Comic" asp-action="List" asp-route-category="Korean">Korean</a>
-            <a class="btn btn-success" asp-controller="Author" asp-action="ListAuthor" asp-route-author="Hichov">Hichov</a>
+            <a class="btn btn-primary" asp-controller="Origin" asp-action="ListOrigin" asp-route-origin="Japanese">Japanese</a>
+            <a class="btn btn-primary" asp-controller="Origin" asp-action="ListOrigin" asp-route-origin="Korean">Korean</a>
+            @*<a class="btn btn-primary" asp-controller="Author" asp-action="ListAuthor" asp-route-author="Hichov">Hichov</a>*@
         </div>
     </div>
 </div>

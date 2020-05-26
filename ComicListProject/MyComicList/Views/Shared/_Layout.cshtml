@@ -1,55 +1,68 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MyComicList</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-    @*//*@
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
-    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/site.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-stape.css" rel="stylesheet" />
     <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        @*navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3*@
+        <nav class="navbar" style="background-color:#DF691A;color:#2B3E50">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MyComicList</a>
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                <a class="navbar-brand" asp-area="" asp-controller="FavoriteList"> FavoriteList</a>
+                <a class="navbar-brand"
+                   asp-area="" asp-controller="Home" asp-action="Index"><img src="~/Pictures/chernoicon.png" style="width: 4vh;height: 4vh;"> MyComicList</a>
+                <a class="navbar-brand"
+                   onclick="javascript:ShowHide('HiddenDiv')"> Categories </a>
+                <a class="navbar-brand"
+                   asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                <a class="navbar-brand"
+                   asp-area="" asp-controller="FavoriteList" asp-action="Index"> FavoriteList</a>
                 @await Component.InvokeAsync("FavoriteListSummary")
                 <form class="navbar-brand" asp-controller="Comic" asp-action="Search" method="get">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search for a comic" name="searchString" value="@ViewData["searchString"]">
-                    </div>
+                    <input type="text" class="form-control" placeholder="Search for a comic" name="searchString" value="@ViewData["searchString"]">
                 </form>
                 <partial name="_LoginPartial" />
             </div>
         </nav>
-        <div class="container">
-            @await Component.InvokeAsync("OriginMenu")
-        </div>
-        <div class="container">
-            @await Component.InvokeAsync("AuthorMenu")
-        </div>
-        <div class="container">
-            @await Component.InvokeAsync("GenreMenu")
-        </div>
+        <div style="text-align:center">
+            <div id="HiddenDiv" style="display: none; background-color: #DF691A;text-align:center">
+                <div class="container">
+                    @await Component.InvokeAsync("OriginMenu")
+                </div>
+                <div class="container">
+                    @await Component.InvokeAsync("GenreMenu")
+                </div>
+                <div class="container">
+                    @await Component.InvokeAsync("AuthorMenu")
+                </div>
+            </div>
+            <div class="container body-content" style="padding:50px;">
+                @RenderBody()
+                <hr />
 
-        <div class="container body-content" style="padding:50px;">
-            @RenderBody()
-            <hr />
-
+            </div>
+            @RenderSection("scripts", required: false)
         </div>
-        @RenderSection("scripts", required: false)
     </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+
+    <script type="text/javascript">
+
+        function ShowHide(divId) {
+            if (document.getElementById(divId).style.display == 'none') {
+                document.getElementById(divId).style.display = 'inline-block';
+            }
+            else {
+                document.getElementById(divId).style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>

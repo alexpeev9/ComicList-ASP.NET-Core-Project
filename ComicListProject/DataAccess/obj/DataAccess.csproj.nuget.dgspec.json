@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexp\\Desktop\\AspNetProjects\\MyComicList\\DataAccess\\DataAccess.csproj": {}
+    "C:\\Users\\alexp\\Desktop\\AspNetProjects\\New folder\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexp\\Desktop\\AspNetProjects\\MyComicList\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\alexp\\Desktop\\AspNetProjects\\New folder\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\MyComicList\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\New folder\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\MyComicList\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\New folder\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\alexp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\MyComicList\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\New folder\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\alexp\\Desktop\\AspNetProjects\\MyComicList\\DataStructure\\DataStructure.csproj": {
-                "projectPath": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\MyComicList\\DataStructure\\DataStructure.csproj"
+              "C:\\Users\\alexp\\Desktop\\AspNetProjects\\New folder\\DataStructure\\DataStructure.csproj": {
+                "projectPath": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\New folder\\DataStructure\\DataStructure.csproj"
               }
             }
           }
@@ -42,6 +42,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.2, )"
@@ -74,14 +78,14 @@
         }
       }
     },
-    "C:\\Users\\alexp\\Desktop\\AspNetProjects\\MyComicList\\DataStructure\\DataStructure.csproj": {
+    "C:\\Users\\alexp\\Desktop\\AspNetProjects\\New folder\\DataStructure\\DataStructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\MyComicList\\DataStructure\\DataStructure.csproj",
+        "projectUniqueName": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\New folder\\DataStructure\\DataStructure.csproj",
         "projectName": "DataStructure",
-        "projectPath": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\MyComicList\\DataStructure\\DataStructure.csproj",
+        "projectPath": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\New folder\\DataStructure\\DataStructure.csproj",
         "packagesPath": "C:\\Users\\alexp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\MyComicList\\DataStructure\\obj\\",
+        "outputPath": "C:\\Users\\alexp\\Desktop\\AspNetProjects\\New folder\\DataStructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -111,10 +115,6 @@
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
               "version": "[2.2.5, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[3.1.3, )"
             }
           },
           "imports": [

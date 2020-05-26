@@ -10,7 +10,7 @@ using MyComicList.Data;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200507184846_Initial")]
+    [Migration("20200513093118_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -197,6 +197,22 @@ namespace DataAccess.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "f8fae3b5-e1b9-49d1-86b4-add94c3b7255",
+                            ConcurrencyStamp = "a72f867f-3a1c-4b9f-b8f5-7dd04733ad0c",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        },
+                        new
+                        {
+                            Id = "56157cb7-e823-45bc-a5e9-d61a090f6075",
+                            ConcurrencyStamp = "b2d4fc13-efc2-4133-854e-8adfd5ad978e",
+                            Name = "Administrator",
+                            NormalizedName = "ADMINISTRATOR"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

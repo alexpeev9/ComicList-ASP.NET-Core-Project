@@ -2,6 +2,7 @@
 using DataAccess.Interfaces;
 using DataAccess.Repositories;
 using DataStructure;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyComicList.Models.ViewModels;
 using System;
@@ -43,7 +44,8 @@ namespace MyComicList.Controllers
         //    });
         //}
 
-            public ViewResult Search(string searchString)
+        [Authorize(Roles = "Administrator")]
+        public ViewResult Search(string searchString)
         {
             string _searchString = searchString;
             IEnumerable<Comic> comics;

@@ -7,14 +7,9 @@
 
 @if (Model.FavoriteService.FavoriteListItems.Count > 0 && SignInManager.IsSignedIn(User))
 {
-    <li>
-        <a asp-controller="FavoriteList">
-            <span class="glyphicon glyphicon-shopping-cart"></span>
-            <span id="cart-status">
-                @Model.FavoriteService.FavoriteListItems.Count
-            </span>
-        </a>
-    </li>
+    <a class="navbar-brand" asp-controller="FavoriteList" asp-action="Index">
+        <span id="cart-status"> My List: @Model.FavoriteService.FavoriteListItems.Count </span>
+    </a>
 }
 
 

@@ -10,3 +10,15 @@ C:\Users\alexp\Desktop\AspNetProjects\MyComicList\DataAccess\bin\Debug\netcoreap
 C:\Users\alexp\Desktop\AspNetProjects\MyComicList\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\alexp\Desktop\AspNetProjects\MyComicList\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
 C:\Users\alexp\Desktop\AspNetProjects\MyComicList\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.deps.json
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataAccess\bin\Debug\netcoreapp3.1\DataStructure.dll
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataAccess\bin\Debug\netcoreapp3.1\DataStructure.pdb
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csprojAssemblyReference.cache
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfoInputs.cache
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfo.cs
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CopyComplete
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\alexp\Desktop\AspNetProjects\New folder\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CoreCompileInputs.cache

@@ -6,22 +6,24 @@
         <div class="card">
             <div class="text-center view overlay hm-white-slight">
                 <img src="@Model.ImageUrl" class="img-fluid" alt="">
+                <h4 class="card-title" style="text-align: center">Title: @Model.Title</h4>
                 <a href="#">
                     <div class="mask waves-effect waves-light"></div>
                 </a>
             </div>
-            <div class="card-block">
-                <!--Title-->
-                <h4 class="card-title">@Model.Title</h4>
-                <!--Text-->
-                @*<p class="card-text">@Model.ImageUrl.</p>*@
-                <p class="btn btn-group pull-right">
-                    <a asp-controller="Comic" asp-action="List" class="btn btn-default">Show all comics</a>
-                    <button class="btn btn-success" id="cartButton" asp-controller="FavoriteList" asp-action="AddToFavoriteList" asp-route-comicId="@Model.ComicId">
-                        Add @Model.Title to cart
-                    </button>
-                </p>
+            <div class="card-block" style="float:right; display: inline-block">
+                <div class="addToCart text-right">
+                    <p class="button ">
+                        <a class="btn btn-primary" id="cartButton" asp-controller="FavoriteList" asp-action="AddToFavoriteList" asp-route-comicId="@Model.ComicId">
+                            Add @Model.Title to Favorite List
+                        </a>
+                    </p>
+                </div>
+                <h4 class="card-text">Volumes: @Model.Volumes</h4>
+                <h4 class="card-text">Information about @Model.Title : @Model.Info</h4>
             </div>
+            <br/>
+            <img src="@Model.ImageThumbnailUrl" class="card-img-bottom" alt="">
         </div>
     </div>
 </div>
