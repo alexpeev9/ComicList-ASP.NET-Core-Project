@@ -1,1 +1,0 @@
-Проектът е направен на ASP.NET Core Web Application MVC.
